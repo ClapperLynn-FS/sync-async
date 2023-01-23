@@ -1,7 +1,7 @@
 //var http = require('htt');
 var http = require('http');
 // var myname = functon() {
-var myname = console.log("Here is my IP address");
+let myname = console.log("Here is my IP address");
 
 
 //function callHttpbi() {
@@ -19,8 +19,9 @@ async function callHttpbin() {
      response.on('end', function() {
       var result = JSON.parse(str);
       myips = result.origin;
+      
       //resolve()
-      resolve(data)
+      resolve(myips)
      });
      }
     );
@@ -34,7 +35,7 @@ function executeAsyncTask(){
     //const valueA = await callHttpbin()
   const valueA =  callHttpbin()
   const valueB = myname();
-  //console.log(valueB+" "+valueA)
+  
   console.log(valueB+" "+valueA);
   //missing }
 }
